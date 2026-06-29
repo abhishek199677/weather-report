@@ -1,0 +1,17 @@
+{
+  "name": "weather-report",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --names server,client \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "npm run dev -w server",
+    "dev:client": "streamlit run client/app.py --server.port 8501",
+    "start": "npm run start -w server",
+    "typecheck": "npm run typecheck -w server"
+  },
+  "workspaces": [
+    "server"
+  ],
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
